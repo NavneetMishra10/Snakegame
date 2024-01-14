@@ -7,7 +7,7 @@
 
  body {
      /* background-color: red; */
-     background: url("bg.jpg");
+     background: url("/bg.jpg");
      min-height: 100vh;
      background-size: 100% 100%;
      background-repeat: no-repeat;
@@ -38,7 +38,7 @@
  #HiscoreCard{
     position: absolute;
      top: 49px;
-     right: 88px;
+     right: 102px;
      font-size: 38px;
      font-weight: bold;
      font-family: 'New Tegomin', serif;
