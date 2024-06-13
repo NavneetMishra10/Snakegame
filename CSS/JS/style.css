@@ -1,64 +1,114 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 
- * {
-     margin: 0px;
-     padding: 0px;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
- body {
-     /* background-color: red; */
-     background: url("/Asset/bg.jpg");
-     min-height: 100vh;
-     background-size: 100% 100%;
-     background-repeat: no-repeat;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
+html, body {
+    height: 100%;
+}
 
- #board {
-     background: linear-gradient(rgb(154, 154, 91), rgb(90, 154, 90));
-     width: 90vmin;
-     height: 92vmin;
-     border: 2px solid black;
-     display: grid;
-     grid-template-columns: repeat(18, 1fr);
-     grid-template-rows: repeat(18, 1fr);
- }
+body {
+    background: url("/Asset/bg.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'New Tegomin', serif;
+    overflow: hidden;
+}
 
- #scoreCard {
-     position: absolute;
-     top: 9px;
-     right: 202px;
-     font-size: 38px;
-     font-weight: bold;
-     font-family: 'New Tegomin', serif ;
- }
+#board {
+    background: linear-gradient(rgb(154, 154, 91), rgb(90, 154, 90));
+    width: 90vmin;
+    height: 90vmin;
+    max-width: 90vw;
+    max-height: 90vw;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+}
 
- #HiscoreCard{
+#scoreCard, #HiscoreCard {
+    font-size: 3vw;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#scoreCard {
     position: absolute;
-     top: 49px;
-     right: 102px;
-     font-size: 38px;
-     font-weight: bold;
-     font-family: 'New Tegomin', serif;
- }
+    top: 10px;
+    right: 10px;
+}
 
- .shead {
-     background: linear-gradient(rgb(178, 97, 97), rgb(192, 192, 110));
-     border: 2px solid purple;
-     transform: scale(1.02);
-     border-radius: 9px;
- }
+#HiscoreCard {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 
- .snake {
-     background-color: purple;
-     border: .25vmin solid white;
-     border-radius: 13px;
- }
+.shead {
+    background: linear-gradient(rgb(178, 97, 97), rgb(192, 192, 110));
+    border: 2px solid purple;
+    transform: scale(1.02);
+    border-radius: 9px;
+}
 
- .food {
-     background: linear-gradient(red, purple);
-     border: .25vmin solid black;
-     border-radius: 8px;
- }
+.snake {
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 13px;
+}
+
+.food {
+    background: linear-gradient(red, purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.control-button {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    text-align: center;
+    line-height: 60px;
+    font-size: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.control-button:hover {
+    background-color: #ccc;
+}
+
+@media (max-width: 600px) {
+    .control-button {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+
+    #scoreCard, #HiscoreCard {
+        font-size: 4vw;
+    }
+}
